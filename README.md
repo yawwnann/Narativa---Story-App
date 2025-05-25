@@ -1,20 +1,26 @@
-# Dicoding Story App - Submission FE Expert (Enhanced)
+# Narativa: Kisah Anda di Peta Dunia
 
-Aplikasi Single-Page Application (SPA) untuk berbagi cerita (mirip Instagram Story) yang menampilkan lokasi cerita pada peta. Dibangun menggunakan Vanilla JavaScript, Webpack, dan berbagai Web API modern sebagai bagian dari submission kelas Menjadi Front-End Web Developer Expert di Dicoding Academy. Versi ini mencakup perbaikan dan peningkatan UI/UX.
+Selamat datang di **Narativa**, sebuah aplikasi web inovatif yang membawa pengalaman berbagi cerita ke tingkat yang lebih mendalam. Bayangkan sebuah platform di mana setiap kisah yang Anda bagikan tidak hanya berupa teks dan gambar, tetapi juga memiliki **jejak lokasi yang tersemat pada peta interaktif**. Dicoding Narativa adalah Single-Page Application (SPA) yang dirancang untuk mewujudkan visi tersebut, dibangun dengan kekuatan Vanilla JavaScript, Webpack, dan beragam Web API modern. Aplikasi ini adalah hasil pengembangan dari kelas **Menjadi Front-End Web Developer Expert** di Dicoding Academy, dengan fokus khusus pada peningkatan pengalaman pengguna (UI/UX).
 
-**Demo:** https://storyku.netlify.app/
+---
 
-## Fitur
+## Fitur Utama yang Membuat Narativa Menonjol
 
-* **Autentikasi Pengguna:** Registrasi, Login, status login persisten (LocalStorage), update UI reaktif tanpa reload halaman penuh via Event Bus sederhana.
-* **Manajemen Cerita:** Menampilkan daftar cerita terbaru, menambah cerita baru (deskripsi wajib, foto wajib maks 1MB dari kamera/upload), lokasi opsional via peta.
-* **Peta Interaktif:** Menampilkan lokasi cerita (LeafletJS + MapTiler API), marker dengan popup, peta input lokasi (klik/geser), kontrol layer (Streets/Satellite), lazy loading peta.
-* **Fitur Web API Modern:** Camera Access (`getUserMedia`), View Transitions API, Fetch API, Web Components (`<story-item>`), LocalStorage.
-* **Arsitektur:** SPA (hash routing), pola MVP per halaman, modul ES6, Webpack bundling.
-* **Aksesibilitas:** Struktur Semantik, Skip Link, Label Form, Alt Text, ARIA attributes (`role`, `aria-live`, `aria-busy`, `aria-describedby`, `aria-invalid`, `aria-label`, dll.), Manajemen Fokus, Outline Fokus Keyboard.
-* **User Experience:** Desain Responsif (Mobile Friendly), Indikator Loading (Spinner), Notifikasi Toast untuk pesan sukses/error, tata letak dan spasi yang ditingkatkan untuk tampilan lebih profesional.
+Narativa didukung oleh serangkaian fitur canggih yang dirancang untuk kemudahan dan kenyamanan Anda:
 
-## Teknologi & Library
+* **Autentikasi Pengguna yang Mulus:** Mulai perjalanan Anda dengan mudah melalui **registrasi** dan **login** yang aman. Status login Anda akan dipertahankan berkat **LocalStorage**, dan setiap perubahan UI akan diperbarui secara **reaktif** tanpa perlu memuat ulang halaman penuh, semua berkat sistem Event Bus yang cerdas.
+* **Berbagi Cerita yang Kaya:** Bagikan momen Anda dengan menambahkan **cerita baru** yang mencakup deskripsi wajib dan foto berkualitas tinggi (maksimal 1MB) yang bisa Anda ambil langsung dari kamera atau unggah. Yang menarik, Anda juga memiliki opsi untuk menyertakan **lokasi cerita** Anda pada peta, menambah dimensi visual yang unik.
+* **Peta Interaktif Bertenaga:** Lihat cerita Anda hidup di atas peta yang dinamis, didukung oleh **LeafletJS** dan **MapTiler API**. Setiap cerita ditampilkan dengan **marker interaktif** yang dilengkapi popup detail. Ingin menambahkan lokasi? Cukup klik atau geser peta! Anda juga bisa memilih antara tampilan jalanan atau satelit, dengan fitur **lazy loading** untuk pengalaman peta yang lancar.
+* **Memanfaatkan Kekuatan Web Modern:** Narativa dibangun dengan fondasi teknologi web terkini, termasuk **Camera Access** (`getUserMedia`), **View Transitions API** untuk transisi halaman yang halus, **Fetch API** untuk komunikasi data yang efisien, **Web Components** seperti `<story-item>` untuk modularitas, dan **LocalStorage** untuk data persisten.
+* **Arsitektur Kokoh:** Sebagai **SPA** dengan hash routing, Narativa mengadopsi pola **MVP (Model-View-Presenter)** per halaman, diorganisir dalam modul **ES6**, dan disatukan dengan rapi menggunakan **Webpack bundling**.
+* **Prioritas Aksesibilitas:** Kami memastikan Narativa dapat diakses oleh semua orang dengan implementasi **struktur semantik**, **Skip Link**, label form yang jelas, Alt Text untuk gambar, dan penggunaan atribut **ARIA** yang ekstensif (`role`, `aria-live`, `aria-busy`, `aria-describedby`, `aria-invalid`, `aria-label`, dll.). **Manajemen Fokus** yang cermat dan **Outline Fokus Keyboard** yang jelas juga menjadi perhatian utama.
+* **Pengalaman Pengguna yang Ditingkatkan:** Nikmati desain **responsif** yang ramah seluler, **indikator loading** visual (spinner) yang informatif, dan **notifikasi Toast** yang muncul dengan elegan untuk pesan sukses atau error. Seluruh tata letak dan spasinya telah disempurnakan untuk tampilan yang lebih profesional dan menarik.
+
+---
+
+## Teknologi di Balik Layar
+
+Narativa ditenagai oleh kombinasi teknologi web standar industri dan library pihak ketiga:
 
 * HTML5, CSS3, JavaScript (ES6+)
 * [Dicoding Story API](https://story-api.dicoding.dev/)
@@ -23,64 +29,54 @@ Aplikasi Single-Page Application (SPA) untuk berbagi cerita (mirip Instagram Sto
 * [Font Awesome](https://fontawesome.com/)
 * Webpack, Babel, NPM
 
-## Prasyarat
+---
 
-* Node.js (disarankan versi LTS terbaru)
-* NPM (biasanya terinstal bersama Node.js)
-* Akun [MapTiler Cloud](https://www.maptiler.com/cloud/) (bisa daftar gratis) untuk mendapatkan API Key Peta.
+## Memulai Petualangan Anda dengan Narativa (Lokal)
 
-## Instalasi & Menjalankan Lokal
+Tertarik untuk mencoba Narativa di lingkungan lokal Anda? Ikuti langkah-langkah mudah ini:
 
-1.  **Clone / Unduh Proyek**
-2.  **Install Dependencies:**
+### Prasyarat
+
+Sebelum memulai, pastikan Anda memiliki:
+
+* **Node.js:** Disarankan versi LTS terbaru.
+* **NPM:** Biasanya sudah terinstal bersama Node.js.
+* **Akun MapTiler Cloud:** Anda bisa mendaftar secara gratis untuk mendapatkan API Key peta.
+
+### Instalasi dan Menjalankan Proyek
+
+1.  **Unduh atau Clone Proyek:** Dapatkan kode sumber Narativa ke komputer Anda.
+2.  **Instal Dependencies:** Buka terminal di direktori proyek dan jalankan:
     ```bash
     npm install
     ```
-3.  **Konfigurasi API Key Peta:**
-    * Dapatkan API Key Anda dari dashboard MapTiler Cloud.
-    * Buka file `STUDENT.txt` dan `src/scripts/config.js`.
-    * Ganti placeholder `MASUKKAN_API_KEY_MAP_ANDA_DISINI` atau `ycYnjQnQjaybWkdGWhCZ` (jika sudah terlanjur diganti) dengan API Key MapTiler **Anda yang valid** di **kedua** file tersebut.
+3.  **Konfigurasi API Key Peta:** Ini langkah penting!
+    * Ambil **API Key** unik Anda dari dashboard MapTiler Cloud.
+    * Buka file **`STUDENT.txt`** dan **`src/scripts/config.js`**.
+    * Ganti *placeholder* `MASUKKAN_API_KEY_MAP_ANDA_DISINI` (atau `ycYnjQnQjaybWkdGWhCZ` jika sudah ada) dengan **API Key MapTiler Anda yang valid** di **kedua** file tersebut.
 4.  **Jalankan Development Server:**
     ```bash
     npm run start-dev
     ```
-5.  **Buka Aplikasi:** Buka browser dan navigasikan ke `http://localhost:9000` (atau port lain yang muncul di terminal).
+5.  **Buka Aplikasi:** Buka browser favorit Anda dan navigasikan ke `http://localhost:9000` (atau periksa terminal Anda untuk port yang berbeda).
 
-## Build & Serve Produksi
+---
 
-1.  **Build:**
+## Produksi dan Penyebaran
+
+Untuk menyiapkan Narativa dalam mode produksi:
+
+1.  **Build Aplikasi:**
     ```bash
     npm run build
     ```
-    (Hasil ada di folder `dist`)
-2.  **Serve Lokal:**
+    Hasil *build* akan tersedia di folder `dist/`.
+2.  **Sajikan Secara Lokal (Opsional):**
     ```bash
     npm run serve
     ```
-    (Buka `http://localhost:8080` atau alamat yang muncul)
+    Kemudian akses melalui `http://localhost:8080` atau alamat yang ditampilkan.
 
-## Struktur Proyek
+---
 
-```text
-dicoding-story-app/
-├── dist/
-├── node_modules/
-├── src/
-│   ├── public/
-│   ├── scripts/
-│   │   ├── components/
-│   │   ├── data/
-│   │   ├── pages/
-│   │   ├── routes/
-│   │   └── utils/
-│   ├── styles/
-│   │   ├── components/
-│   │   └── styles.css
-│   └── index.html
-├── .gitignore
-├── package.json
-├── README.md
-├── STUDENT.txt
-├── webpack.common.js
-├── webpack.dev.js
-└── webpack.prod.js
+Dengan Narativa, setiap cerita memiliki tempatnya di dunia. Selamat berbagi!
