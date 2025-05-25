@@ -1,0 +1,223 @@
+/* --- Global Form Styles --- */
+.form-group {
+  margin-bottom: 1.5rem; /* Menambah sedikit ruang bawah untuk keterbacaan yang lebih baik */
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.6rem; /* Sedikit lebih besar dari 0.5rem */
+  font-weight: var(--font-weight-medium);
+  color: var(--medium-text);
+  font-size: 0.95rem; /* Sedikit lebih besar untuk keterbacaan */
+  line-height: 1.2; /* Memastikan baris teks tidak terlalu rapat */
+}
+
+/* --- Input, Textarea, & Select Styles --- */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem; /* Padding yang sedikit lebih besar untuk kenyamanan klik/tap */
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--card-bg);
+  color: var(--dark-text);
+  font-family: inherit;
+  box-shadow: var(--shadow-xs); /* Tetap gunakan shadow kecil */
+  transition: border-color var(--transition-duration) var(--transition-timing),
+    box-shadow var(--transition-duration) var(--transition-timing),
+    background-color var(--transition-duration) ease-in-out; /* Penambahan ease-in-out untuk transisi latar belakang */
+  appearance: none; /* Menghapus styling default browser */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--focus-outline-color);
+  background-color: var(
+    --card-bg
+  ); /* Menggunakan variabel yang sudah ada jika ingin tetap gelap, atau ganti jika ingin lebih terang */
+  box-shadow: 0 0 0 3px rgba(var(--focus-shadow-color-rgb), 0.3); /* Shadow fokus yang lebih jelas */
+  outline: none; /* Menghilangkan outline default browser */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--light-text);
+  opacity: 0.8; /* Sedikit lebih terlihat dari 0.7 */
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px; /* Sedikit lebih tinggi dari 110px */
+  line-height: 1.6;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 0.6rem; /* Konsisten dengan label */
+  font-size: 0.875rem;
+  color: var(--medium-text);
+}
+
+/* --- Form Actions & Buttons --- */
+.form-actions {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-md);
+  flex-wrap: wrap; /* Pastikan tombol tetap responsif */
+}
+
+.form-actions .button {
+  min-width: 130px; /* Memberikan sedikit lebih banyak lebar minimum */
+}
+
+.form-actions .loading-indicator {
+  margin-left: var(--spacing-sm);
+}
+
+/* --- Error States --- */
+input[aria-invalid="true"],
+textarea[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: var(
+    --error-color
+  ) !important; /* Gunakan !important dengan hati-hati */
+}
+
+input[aria-invalid="true"]:focus,
+textarea[aria-invalid="true"]:focus,
+select[aria-invalid="true"]:focus {
+  border-color: var(--error-color) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--error-color-rgb), 0.25) !important; /* Menggunakan variabel warna error */
+  background-color: var(--card-bg) !important;
+}
+
+.form-group .error-message {
+  color: var(--error-color);
+  margin-top: 0.5rem;
+  font-size: 0.85rem; /* Sedikit lebih kecil untuk pesan error */
+  font-weight: var(--font-weight-normal);
+}
+
+/* --- Disabled States --- */
+input:disabled,
+textarea:disabled,
+button:disabled,
+select:disabled {
+  background-color: var(
+    --disabled-bg-color,
+    #e9ecef
+  ) !important; /* Menggunakan variabel jika ada, fallback ke warna default */
+  border-color: var(--disabled-border-color, #ced4da) !important;
+  color: var(--disabled-text-color, #6c757d) !important;
+  cursor: not-allowed;
+  opacity: 0.8; /* Sedikit opacity agar terlihat jelas disabled */
+}
+
+/* --- Auth Page Specific Styles --- */
+.auth-page p {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--medium-text);
+}
+
+.auth-page p a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: var(--font-weight-medium);
+  transition: color 0.2s ease-in-out; /* Penambahan ease-in-out */
+  border-radius: var(--border-radius-sm);
+}
+
+.auth-page p a:hover {
+  color: var(--primary-color-dark);
+  text-decoration: none; /* Menghilangkan underline saat hover bisa membuat lebih bersih */
+}
+
+/* --- Location Controls --- */
+.location-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-block: var(--spacing-sm) var(--spacing-md);
+}
+
+#get-current-location-button {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--dark-text);
+  font-weight: var(--font-weight-normal);
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+#get-current-location-button:hover:not(:disabled) {
+  background-color: var(
+    --secondary-color-dark,
+    #5c636a
+  ); /* Menggunakan variabel jika ada, fallback ke warna default */
+  border-color: var(--secondary-color-dark, #565e64);
+  color: white;
+}
+
+.location-feedback {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--primary-color-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.location-feedback .fa-spinner {
+  animation: spinner-spin 1.5s linear infinite;
+  color: var(--primary-color);
+}
+
+/* --- Selected Coordinates Display --- */
+#selected-coords {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.9rem; /* Sedikit penyesuaian padding */
+  background-color: var(--primary-color-light);
+  border: 1px solid var(--primary-color-border, #b9ccf7); /* Menggunakan variabel jika ada, fallback ke warna default */
+  border-radius: var(--border-radius-md);
+  color: var(--primary-color-dark);
+  margin-top: var(--spacing-md);
+  font-style: normal;
+  word-break: break-all;
+  line-height: 1.5;
+  font-weight: var(--font-weight-normal);
+  box-shadow: var(--shadow-xs);
+}
+
+#selected-coords:empty::before {
+  content: "Lokasi belum dipilih.";
+  font-style: italic;
+  color: var(--medium-text);
+  opacity: 0.8;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes spinner-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

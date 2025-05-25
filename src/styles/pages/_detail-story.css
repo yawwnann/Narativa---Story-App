@@ -1,0 +1,240 @@
+.detail-story-page {
+  padding-block: var(--spacing-xl) var(--spacing-xxxl); /* Padding lebih besar */
+}
+
+.detail-story-page h1 {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl); /* Margin bawah judul lebih besar */
+  font-size: 2.8rem; /* Ukuran judul lebih besar */
+  color: var(--dark-text);
+  font-weight: var(--font-weight-bold); /* Bold untuk judul */
+  line-height: 1.2; /* Line height lebih rapat */
+  padding-inline: var(--spacing-md);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Sedikit bayangan teks */
+}
+
+.detail-story__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  background-color: var(--card-bg);
+  padding: var(--spacing-xl); /* Padding layout lebih besar */
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md); /* Bayangan sedang */
+  border: 1px solid var(--border-color);
+}
+
+.detail-story__media {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: var(--skeleton-bg); /* Latar belakang placeholder gambar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-in;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  max-height: 75vh; /* Tinggi maksimal media lebih besar */
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm); /* Bayangan halus pada media */
+}
+.detail-story__media::after {
+  content: "\f00e"; /* Ikon zoom in */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(33, 150, 243, 0.6); /* Overlay biru yang lebih cerah */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem; /* Ukuran ikon zoom lebih besar */
+  opacity: 0;
+  transition: opacity var(--transition-duration) var(--transition-timing);
+  pointer-events: none;
+}
+.detail-story__media:hover::after {
+  opacity: 1;
+}
+
+.detail-story__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menggunakan cover agar gambar tidak meninggalkan ruang kosong */
+  display: block;
+  transition: transform 0.3s ease;
+}
+.detail-story__media:hover .detail-story__image {
+  transform: scale(1.05); /* Efek zoom lebih terlihat */
+}
+
+.detail-story__image[src="images/placeholder.png"] {
+  width: 120px; /* Ukuran placeholder lebih besar */
+  height: 120px;
+  object-fit: contain;
+  opacity: 0.4; /* Opacity lebih transparan */
+}
+
+.detail-story__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); /* Jarak antar elemen konten lebih besar */
+  padding: var(--spacing-sm) 0;
+}
+
+.detail-story__date {
+  font-size: 0.95rem; /* Ukuran font tanggal lebih besar */
+  color: var(--medium-text);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+.detail-story__date i {
+  color: var(--light-text); /* Warna ikon tanggal lebih terang */
+  font-size: 1.1em; /* Ukuran ikon lebih besar */
+}
+
+.detail-story__description {
+  font-size: 1.05rem; /* Ukuran font deskripsi lebih besar */
+  line-height: 1.7; /* Line height lebih longgar untuk kenyamanan membaca */
+  color: var(--dark-text);
+  white-space: pre-wrap;
+  margin-block: var(--spacing-md) var(--spacing-lg);
+  padding-bottom: 0;
+  border-bottom: none;
+  flex-grow: 1;
+}
+
+.detail-story__location {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.detail-story__location h2 {
+  font-size: 1.35rem; /* Ukuran h2 lokasi lebih besar */
+  margin-bottom: var(--spacing-md);
+  margin-top: 0;
+  border: none;
+  padding: 0;
+  color: var(--dark-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.detail-story__map {
+  width: 100%;
+  height: 350px; /* Tinggi peta lebih besar */
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--skeleton-bg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm); /* Bayangan halus pada peta */
+}
+
+.detail-story__no-location {
+  font-style: normal;
+  color: var(--medium-text);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  border: 1px dashed var(--border-color);
+  font-size: 1rem; /* Ukuran font lebih besar */
+  text-align: center;
+  min-height: 180px; /* Tinggi minimal lebih besar */
+  box-shadow: var(--shadow-xs); /* Tanpa bayangan untuk border dashed */
+}
+.detail-story__no-location i {
+  color: var(--light-text);
+  margin-right: 0;
+  font-size: 2.2rem; /* Ukuran ikon lebih besar */
+  margin-bottom: var(--spacing-sm);
+}
+
+.detail-story__actions {
+  text-align: center;
+  margin-top: var(--spacing-xxl); /* Margin atas lebih besar */
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+.detail-story__actions .button {
+  min-width: 200px; /* Lebar tombol lebih besar */
+  background-color: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  font-weight: var(--font-weight-medium); /* Font weight medium */
+  box-shadow: none; /* Tanpa bayangan default */
+}
+.detail-story__actions .button:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white-color);
+  transform: translateY(-2px); /* Sedikit naik saat hover */
+  box-shadow: var(--shadow-sm); /* Bayangan halus saat hover */
+}
+.detail-story__actions .button i {
+  margin-right: var(--spacing-sm);
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .detail-story__layout {
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); /* Ratio kolom sedikit diubah */
+    gap: var(--spacing-xxl); /* Jarak antar kolom lebih besar */
+    padding: var(--spacing-xl);
+  }
+  .detail-story__media {
+    max-height: 80vh; /* Tinggi maksimal media lebih besar */
+    aspect-ratio: unset;
+  }
+  .detail-story__image {
+    max-height: 80vh; /* Tinggi maksimal gambar lebih besar */
+  }
+  .detail-story-page h1 {
+    font-size: 3rem; /* Ukuran judul lebih besar di desktop */
+  }
+  .detail-story__content {
+    padding: var(--spacing-sm);
+  }
+}
+
+@media screen and (width >= 1024px) {
+  .detail-story__layout {
+    gap: var(--spacing-xxl);
+    padding: var(--spacing-xxl); /* Padding layout lebih besar */
+  }
+  .detail-story__description {
+    font-size: 1.1rem; /* Ukuran font deskripsi lebih besar */
+  }
+  .detail-story__map {
+    height: 400px; /* Tinggi peta lebih besar */
+  }
+}
+
+.detail-story-page > .error-message {
+  padding: var(--spacing-lg);
+  background-color: var(--error-color-light);
+  border: 1px solid #ef9a9a; /* Border sedikit berbeda */
+  border-left: 5px solid var(--error-color); /* Border kiri lebih tebal */
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  font-weight: var(--font-weight-medium); /* Font weight medium */
+  color: #d32f2f; /* Warna teks error lebih jelas */
+  margin: var(--spacing-xl) auto;
+  max-width: 75%; /* Lebar pesan error lebih kecil */
+  box-shadow: var(--shadow-sm);
+}
